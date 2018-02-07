@@ -19,6 +19,6 @@ char * next_word(char *str, char *word);
    single blank character.
 */
 
-void remove_dub_blanks(char *str);
+void remove_dup_blanks(char *str);
 
 #endif /* mystr_h */
