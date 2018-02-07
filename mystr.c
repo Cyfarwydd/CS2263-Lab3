@@ -2,7 +2,23 @@
 #include <stdio.h>
 
 char *next_word(char *str, char *word){
-	
+	char *pstr = str;
+	char *pword = word;
+	int done = 0;
+	while(*pstr != '\0'){
+		if(*pstr == *pword){
+			while(*pword != '\0' && *pstr == *pword){
+				pstr++;
+				pword++;
+			}
+			if(*pword == '\0'){
+				//full word was matched
+				pstr++;
+				return pstr;
+			}
+		}
+		*pstr++;
+	}
 	return '\0';
 }
 
