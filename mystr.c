@@ -4,18 +4,24 @@
 char *next_word(char *str, char *word){
 	char *pstr = str;
 	char *pword = word;
-	int done = 0;
 	while(*pstr != '\0'){
-		if(*pstr == *pword){
-			while(*pword != '\0' && *pstr == *pword){
-				pstr++;
-				pword++;
-			}
-			if(*pword == '\0'){
+	  printf("hello");
+	  if(*pstr == *pword){
+	    printf("one");
+	    while(*pstr == *pword){
+	      printf("pstr: %s\npword: %s\n",*pstr, *pword);
+	      pstr++;
+			pword++;
+			if(*pword == ' '){
 				//full word was matched
-				pstr++;
+			  	pstr++;
 				return pstr;
 			}
+			if(*pword == '\0'){
+			  return pstr;
+			}
+			}
+
 		}
 		*pstr++;
 	}
