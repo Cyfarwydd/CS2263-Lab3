@@ -25,11 +25,9 @@ char *next_word(char *str, char *word){
 }
 
 void remove_dup_blanks(char *str){
-	printf("enter remove dup blanks");
-	char *p1 = str, *p2 = p1+1;
-	printf("pointers assigned");
+	char *p1 = str; 
+	char *p2 = p1+1;
 	while(*p2){
-		printf("while(*p2)");
 		if(*p1 == ' ' && *p2 == ' '){
 			while(*p2){
 				char * tmpp = p2;
