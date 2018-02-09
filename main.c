@@ -14,10 +14,6 @@ int main(){
 	}
 //	char  x[80] = "this is a      test";
 //	printf("%s\n",x);
-	for(i = 0; x[i] != '\n'; i++){
-		printf("%c", x[i]);
-	}
-	printf("this is a test");
 	remove_dup_blanks(x);
 	char * w = x;
         char * y = next_word(x, w);
@@ -30,7 +26,6 @@ int main(){
 		w = y;
 		y=next_word(w, w);
 	}
-	printf("while loop finished\n");
 	char* index;
 	for(index = w; index !=y; index++){
 	  printf("%c", *index);
