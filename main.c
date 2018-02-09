@@ -1,17 +1,27 @@
 #include "mystr.h"
 #include <stdio.h>
+#define STR_MAX 80
 
 int main(){
-	char x[80];
-	scanf("%s", x);
-	//char  x[80] = "this is a      test";
-	printf("%s\n",x);
+	char x[STR_MAX];
+	int i;
+	fgets(x, STR_MAX, stdin);
+	for(i = 0; i < STR_MAX; i++){
+		if(x[i] == '\n'){
+
+			x[i] = '\0';
+		}
+	}
+//	char  x[80] = "this is a      test";
+//	printf("%s\n",x);
+	for(i = 0; x[i] != '\n'; i++){
+		printf("%c", x[i]);
+	}
+	printf("this is a test");
 	remove_dup_blanks(x);
 	char * w = x;
         char * y = next_word(x, w);
-	printf("y read:\t %s\n", *y);
 	while(*y !='\0'){
-	  printf("wat");
 		char* index;
 		for(index = w; index != y; index++){
 			printf("%c", *index);
