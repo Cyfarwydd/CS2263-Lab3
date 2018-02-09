@@ -5,21 +5,17 @@ char *next_word(char *str, char *word){
 	char *pstr = str;
 	char *pword = word;
 	while(*pstr != '\0'){
-	  printf("hello");
-	  if(*pstr == *pword){
-	    printf("one");
-	    while(*pstr == *pword){
-	      printf("pstr: %s\npword: %s\n",*pstr, *pword);
-	      pstr++;
-			pword++;
-			if(*pword == ' '){
-				//full word was matched
-			  	pstr++;
-				return pstr;
-			}
-			if(*pword == '\0'){
-			  return pstr;
-			}
+	  	if(*pstr == *pword){
+	    		while(*pstr == *pword){
+	      			pstr++;
+				pword++;
+				if(*pword == ' '){
+			  		pstr++;
+					return pstr;
+				}
+				if(*pword == '\0'){
+			  	return pstr;
+				}
 			}
 
 		}
@@ -29,8 +25,11 @@ char *next_word(char *str, char *word){
 }
 
 void remove_dup_blanks(char *str){
+	printf("enter remove dup blanks");
 	char *p1 = str, *p2 = p1+1;
+	printf("pointers assigned");
 	while(*p2){
+		printf("while(*p2)");
 		if(*p1 == ' ' && *p2 == ' '){
 			while(*p2){
 				char * tmpp = p2;
